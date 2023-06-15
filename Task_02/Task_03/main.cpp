@@ -12,99 +12,81 @@
 #include "rhombus.h"
 #include "..\constructorError.h"
 
-void ErrorTriangleShape(Triangle* tr) {
-	int value = tr->get_A() + tr->get_B() + tr->get_C();
-	if (value == 180) {
-		std::cout << tr->get_name() << "(стороны "
-			<< tr->get_a() << ", "
-			<< tr->get_b() << ", "
-			<< tr->get_c() << "; "
-			<< "углы "
-			<< tr->get_A() << ", "
-			<< tr->get_B() << ", "
-			<< tr->get_C() << ") создан" << std::endl;
-		//Прямоугольный треугольник (стороны 3, 4, 5; углы 30, 60, 90) создан
-	}
-	else {
-		throw ConstructorError("Ошибка создания фигуры. Причина: сумма углов не равна 180");
-	}
-}
-
-void ErrorTetragonShape(Tetragon* tetra) {
-	int value = tetra->get_A() + tetra->get_B() + tetra->get_C() + tetra->get_D();
-	if (value == 360) {
-		std::cout << tetra->get_name() << "(стороны "
-			<< tetra->get_a() << ", "
-			<< tetra->get_b() << ", "
-			<< tetra->get_c() << ", "
-			<< tetra->get_d() << "; "
-			<< "углы "
-			<< tetra->get_A() << ", "
-			<< tetra->get_B() << ", "
-			<< tetra->get_C() << ", "
-			<< tetra->get_D() << ") создан" << std::endl;
-	}
-	else {
-		throw ConstructorError("Ошибка создания фигуры. Причина: сумма углов не равна 360");
-	}
-}
-
-void TryCatch(Triangle* shape) {
-
-	try {
-
-		ErrorTriangleShape(shape);
-		
-	}
-	catch (ConstructorError& ex)
-	{
-		//ex.what();
-	}
-}
-
-void TryCatch(Tetragon* tetra) {
-
-	try {
-
-		ErrorTetragonShape(tetra);
-
-	}
-	catch (ConstructorError& ex)
-	{
-		//ex.what();
-	}
-}
 
 int main() {
 
 	setlocale(LC_ALL, "ru");
-	
-	Triangle tr (10, 20, 30, 50, 60, 70);
-	TryCatch(&tr);
 
-	RightTriangle r_tr(10, 20, 30, 50, 60);
-	TryCatch(&r_tr);
+	try {
+		Triangle tr(10, 20, 30, 50, 60, 70);
+		tr.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
 
-	Isosceles isoTr(10, 20, 50, 60);
-	TryCatch(&isoTr);
+	}
 
-	Equilateral eqTr(20);
-	TryCatch(&eqTr);
+	try {
+		RightTriangle r_tr(10, 20, 50, 60, 90);
+		r_tr.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
 
-	Tetragon tetra(10, 20, 30, 40, 50, 60, 70, 80);
-	TryCatch(&tetra);
+	}
 
-	Rectangle rect(10, 20);
-	TryCatch(&rect);
+	try {
+		Isosceles isoTr(10, 20, 50, 60);
+		isoTr.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
 
-	Square sq(20);
-	TryCatch(&sq);
+	}
 
-	Parallelogram paral(20, 30, 30, 40);
-	TryCatch(&paral);
+	try {
+		Equilateral eqTr(20);
+		eqTr.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
 
-	Rhombus rhomb(30, 30, 40);
-	TryCatch(&rhomb);
-	
-	
+	}
+
+	try {
+		Tetragon tetra(10, 20, 30, 40, 50, 60, 70, 80);
+		tetra.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
+
+	}
+
+	try {
+		Rectangle rect(10, 20);
+		rect.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
+
+	}
+
+	try {
+		Square sq(20);
+		sq.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
+
+	}
+
+	try {
+		Parallelogram paral(20, 30, 30, 40);
+		paral.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
+
+	}
+
+	try {
+
+		Rhombus rhomb(30, 30, 40);
+		rhomb.PrintShapeInfo();
+	}
+	catch (ConstructorError& ex) {
+
+	}
 }
