@@ -15,6 +15,7 @@ public:
 	int get_B() ;
 	int get_C() ;
 	void printInfo() override;
+	void PrintShapeInfo();
 };
 
 

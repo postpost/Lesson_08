@@ -10,7 +10,8 @@
 #include "square.h"
 #include "parallelogram.h"
 #include "rhombus.h"
-#include "..\constructorError.h"
+#include "constructorError.h"
+
 
 
 int main() {
@@ -22,7 +23,7 @@ int main() {
 		tr.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -30,7 +31,7 @@ int main() {
 		r_tr.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -38,7 +39,7 @@ int main() {
 		isoTr.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -46,7 +47,7 @@ int main() {
 		eqTr.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -54,7 +55,7 @@ int main() {
 		tetra.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -62,7 +63,7 @@ int main() {
 		rect.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -70,7 +71,7 @@ int main() {
 		sq.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -78,7 +79,7 @@ int main() {
 		paral.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 
 	try {
@@ -87,6 +88,6 @@ int main() {
 		rhomb.PrintShapeInfo();
 	}
 	catch (ConstructorError& ex) {
-
+		//std::cout << ex.what();
 	}
 }

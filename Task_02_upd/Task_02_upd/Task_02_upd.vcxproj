@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f99d701d-1219-4f54-80dc-b3ec86db32a2}</ProjectGuid>
-    <RootNamespace>Task03</RootNamespace>
+    <ProjectGuid>{3e4cbca6-7bb1-46a8-a548-15039f4dde0b}</ProjectGuid>
+    <RootNamespace>Task02upd</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="constructorError.cpp" />
     <ClCompile Include="equilateral.cpp" />
     <ClCompile Include="isosceles.cpp" />
     <ClCompile Include="main.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="constructorError.h" />
     <ClInclude Include="equilateral.h" />
     <ClInclude Include="isosceles.h" />
     <ClInclude Include="parallelogram.h" />
